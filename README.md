@@ -7,7 +7,7 @@ from pyspark.sql import SparkSession
 
 ### Create a variable for starting a session
 ```python
-spark = SparkSession.Builder.appName('Dataframe').getOrCreate()
+spark = SparkSession.builder.appName('Dataframe').getOrCreate()
 spark
 ```
 
