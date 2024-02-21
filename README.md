@@ -11,7 +11,7 @@ spark = SparkSession.builder.appName('Dataframe').getOrCreate()
 spark
 ```
 
-```python
+```terminal
 # Output
 SparkSession - in-memory
 SparkContext
@@ -37,7 +37,7 @@ df.show()
 df.printSchema()
 ```
 
-```python
+```terminal
 # Output:
 root
   | -- Name: string (nullable = true)
@@ -65,6 +65,8 @@ df.columns
 df.head(3)
 
 # In pyspark, the output will be a list not a dataframe.
+```
+```terminal
 # Output:
 
 [Row(Name='Kirankumar', Age=28, Role='Data Science Speicalist'),
