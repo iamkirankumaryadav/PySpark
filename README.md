@@ -30,6 +30,8 @@ df = spark.read.csv('file.csv', header=True, inferSchema=True)
 ### Display the dataframe
 ```python
 df.show()
+
+# Show all the columns
 ```
 
 ### Check the schema
@@ -72,4 +74,14 @@ df.head(3)
 [Row(Name='Kirankumar', Age=28, Role='Data Science Speicalist'),
  Row(Name='Paramveer', Age=29, Role='Data Analyst'),
  Row(Name='Gaurav', Age=29, Role='SDE')]
+```
+
+### Show specific column
+```python
+df.select('Name').show()
+```
+
+### Show multiple columns
+```python
+df.select(['Name', 'Experience']).show()
 ```
