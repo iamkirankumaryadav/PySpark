@@ -32,7 +32,6 @@ df = spark.read.csv('file.csv', header=True, inferSchema=True)
 df.show()
 
 # Show all the columns
-```
 +-----------+----+-------------+
 |       Name| Age|  Designation|
 +-----------+----+-------------+
@@ -40,6 +39,8 @@ df.show()
 |  Paramveer|  29| Data Analyst|
 |     Gaurav|  29|          SDE|
 +-----------+----+-------------+
+```
+
 ### Check the schema
 ```python
 df.printSchema()
