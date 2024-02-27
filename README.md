@@ -33,7 +33,13 @@ df.show()
 
 # Show all the columns
 ```
-
++-----------+----+-------------+
+|       Name| Age|  Designation|
++-----------+----+-------------+
+| Kirankumar|  28| Data Science|
+|  Paramveer|  29| Data Analyst|
+|     Gaurav|  29|          SDE|
++-----------+----+-------------+
 ### Check the schema
 ```python
 df.printSchema()
