@@ -30,7 +30,8 @@ df = spark.read.csv('file.csv', header=True, inferSchema=True)
 ### Display the dataframe
 ```python
 df.show()
-
+```
+```output
 # Show all the columns
 +-----------+----+-------------+
 |       Name| Age|  Designation|
