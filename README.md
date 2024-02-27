@@ -33,13 +33,13 @@ df.show()
 ```
 ```output
 # Show all the columns
-+-----------+----+-------------+
-|       Name| Age|  Designation|
-+-----------+----+-------------+
-| Kirankumar|  28| Data Science|
-|  Paramveer|  29| Data Analyst|
-|     Gaurav|  29|          SDE|
-+-----------+----+-------------+
++-----------+----+------------------------+
+|       Name| Age|             Designation|
++-----------+----+------------------------+
+| Kirankumar|  28| Data Science Specialist|
+|  Paramveer|  29|            Data Analyst|
+|     Gaurav|  29|                     SDE|
++-----------+----+------------------------+
 ```
 
 ### Check the schema
