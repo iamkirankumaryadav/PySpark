@@ -121,3 +121,14 @@ Sumit Suman|27|Python Developer
 sdf = spark.createDataFrame(df)
 sdf.show()
 ```
+
+```output
+# Show all the columns
++-----------------+----+------------------------+
+|             Name| Age|             Designation|
++-----------------+----+------------------------+
+| Kirankumar Yadav|  28| Data Science Specialist|
+|      Suraj Sanka|  28|         DevOps Engineer|
+|      Sumit Suman|  27|        Python Developer|
++-----------------+----+------------------------+
+```
