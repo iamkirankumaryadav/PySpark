@@ -109,7 +109,7 @@ df = pd.DataFrame(data)
 df
 ```
 
-|Name|Age|Designation
+Name|Age|Designation
 ---|---|---|---
 0	|Kirankumar Yadav|28|Data Science Specialist
 1	|Suraj Sanka|28|DevOps Engineer
