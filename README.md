@@ -109,12 +109,12 @@ df = pd.DataFrame(data)
 df
 ```
 
-```output
-Name	Age	Designation
-0	Kirankumar Yadav	28	Data Science Specialist
-1	Suraj Sanka	28	DevOps Engineer
-2	Sumit Suman	27	Python Developer
-```
+|Name|Age|Designation
+---|---|---|---
+0	|Kirankumar Yadav|28|Data Science Specialist
+1	|Suraj Sanka|28|DevOps Engineer
+2	|Sumit Suman|27|Python Developer
+
 
 ```python
 # Create spark DataFrame from Pandas DataFrame
