@@ -132,3 +132,15 @@ sdf.show()
 |      Sumit Suman|  27|        Python Developer|
 +-----------------+----+------------------------+
 ```
+
+### Converting the spark DataFrame to Pandas DataFrame 
+
+```python
+sdf.toPandas().head()
+```
+
+Name|Age|Designation
+:---|:---|:---
+Kirankumar Yadav|28|Data Science Specialist
+Suraj Sanka|28|DevOps Engineer
+Sumit Suman|27|Python Developer
