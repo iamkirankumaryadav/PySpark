@@ -7,6 +7,7 @@ from pyspark.sql import SparkSession
 
 ### Create a variable for starting a session
 ```python
+# PySpark applications start with initializing SparkSession:
 spark = SparkSession.builder.appName("spark").getOrCreate()
 spark.conf.set("spark.sql.execution.arrow.enabled", "true")
 spark
@@ -94,6 +95,8 @@ df.select('Name').show()
 ```python
 df.select(['Name', 'Experience']).show()
 ```
+
+**PySpark DataFrame** can be created by passing a list of `lists`, `tuples`, `dictionaries`, `pyspark.sql.Rows` (List of Rows), a `pandas DataFrame` and an `RDD` list.
 
 ## Create DataFrame using Pandas
 
