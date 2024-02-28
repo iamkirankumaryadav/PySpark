@@ -7,7 +7,8 @@ from pyspark.sql import SparkSession
 
 ### Create a variable for starting a session
 ```python
-spark = SparkSession.builder.appName('Dataframe').getOrCreate()
+spark = SparkSession.builder.appName("spark").getOrCreate()
+spark.conf.set("spark.sql.execution.arrow.enabled", "true")
 spark
 ```
 
@@ -17,14 +18,14 @@ SparkSession - in-memory
 SparkContext
 
 Spark UI
-Version v3.1.1
-Master local[*]
-AppName Dataframe
+Version   v3.4.1
+Master    local[*]
+AppName   spark
 ```
 
 ### Read a dataset and create a dataframe
 ```python
-df = spark.read.csv('file.csv', header=True, inferSchema=True)
+df = spark.read.csv('Data.csv', header=True, inferSchema=True)
 ```
 
 ### Display the dataframe
@@ -92,4 +93,31 @@ df.select('Name').show()
 ### Show multiple columns
 ```python
 df.select(['Name', 'Experience']).show()
+```
+
+## Create DataFrame using Pandas
+
+```python
+import pandas as pd
+data = {
+    'Name': ['Kirankumar Yadav', 'Suraj Sanka', 'Sumit Suman'],
+    'Age': [28, 28, 27],
+    'Designation': ['Data Science Specialist', 'DevOps Engineer', 'Python Developer']
+}
+
+df = pd.DataFrame(data)
+df
+```
+
+```output
+  Name	            Age	Designation
+0	Kirankumar Yadav	28	Data Science Specialist
+1	Suraj Sanka	      28	DevOps Engineer
+2	Sumit Suman	      27	Python Developer
+```
+
+```python
+# Create spark DataFrame from Pandas DataFrame
+sdf = spark.createDataFrame(df)
+sdf.show()
 ```
