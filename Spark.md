@@ -22,12 +22,12 @@
 * **Graph processing:** Analyzing relationships and connections within complex data structures.
 * **Multiple APIs:** Spark provides APIs in various programming languages, including Java, Scala, Python, and R, making it accessible to a wider audience with diverse skillsets.
 
-**3. Ease of Use:**
+### **3. Ease of Use:**
 
 * **Higher-level abstractions:** Spark offers higher-level abstractions like DataFrames and Datasets, which simplify data manipulation and analysis compared to working with raw data structures.
 * **Integration with other tools:** Spark integrates seamlessly with various big data tools and frameworks like Hadoop and HDFS, allowing you to leverage existing infrastructure and expertise.
 
-**4. Open-source and Active Community:**
+### **4. Open-source and Active Community:**
 
 * Being open-source, Spark benefits from a large and active community of developers and users, contributing to its ongoing development and improvement.
 * Extensive documentation and resources are readily available, making it easier to learn and adopt Spark for your projects.
