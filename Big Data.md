@@ -1,4 +1,4 @@
-### **What is big data?**
+### **What is Big Data?**
 
 Big data refers to gigantic collections of information that are too massive and complex for regular software to handle. 
 
