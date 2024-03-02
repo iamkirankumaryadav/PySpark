@@ -19,7 +19,10 @@ Big data tools are like powerful searchlights:
 
 ### **Hadoop:**
 
-* **The storage room:**  Hadoop is a framework that stores and manages massive amounts of data across multiple computers in a distributed way. It's like having a network of warehouses to hold all those information boxes.
+* **The storage room:**  Hadoop is a framework that stores and manages massive amounts of data across multiple computers in a distributed way.
+* It's like having a network of warehouses to hold all those information boxes.
+* Hadoop is a way to distribute very large files across multiple machines. It uses the Hadoop Distributed File System (HDFS)
+* HDFS allows a user to work with large datasets, it also duplicates blocks of data for fault tolerance.
 
 ### **MapReduce:**
 
