@@ -21,16 +21,41 @@ Big data tools are like powerful searchlights:
 
 * **The storage room:**  Hadoop is a framework that stores and manages massive amounts of data across multiple computers in a distributed way.
 * It's like having a network of warehouses to hold all those information boxes.
-* Hadoop is a way to distribute very large files across multiple machines. It uses the Hadoop Distributed File System (HDFS)
+* Hadoop is a way to distribute very large data sets across multiple machines. It uses the Hadoop Distributed File System (HDFS)
 * HDFS allows a user to work with large datasets, it also duplicates blocks of data for fault tolerance.
 
 ### **MapReduce:**
 
-* **The sorting process:**  MapReduce is a programming model within the Hadoop framework. It takes a big job, breaks it down into smaller, more manageable tasks (like sorting through individual boxes), and distributes those tasks across the network of computers. Once individual tasks are complete, MapReduce gathers the results and presents the final output.
+* **The sorting process:**  MapReduce is a programming model within the Hadoop framework.
+* It takes a big job, breaks it down into smaller, more manageable tasks (like sorting through individual boxes), and distributes those tasks across the network of computers.
+* Once individual tasks are complete, MapReduce gathers the results and presents the final output.
+* MapReduce is a way of splitting a computation task to a distributed data sets.
+* MapReduce consist of Job Tracker (Master Node) and multiple Task Trackers (Worker Nodes)
+* The Job Tracker sends code to run on the Task Trackers, the Task Trackers allocate CPU and memory for the tasks and monitor the tasks on the worker nodes.
 
 ### **Spark:**
 
-* **The advanced search tool:**  Spark is another framework that sits on top of Hadoop, but it offers a faster and more flexible way to process data. It can process data in **memory** (like having readily accessible information on a desk) instead of just relying on hard drives (like the warehouse shelves). This makes Spark ideal for real-time processing and iterative tasks where you need to keep going back and analyzing the data multiple times. 
+* **The advanced search tool:**  Spark is another framework that sits on top of Hadoop, but it offers a faster and more flexible way to handle and process big data.
+* It can process data in **memory** (like having readily accessible information on a desk) instead of just relying on hard drives (like the warehouse shelves).
+* This makes Spark ideal for real-time processing and iterative tasks where you need to keep going back and analyzing the data multiple times.
+* Spark is a flexible alternative to **MapReduce**, Spark can used data stored in a variety of formats (Cassandra DB, AWS S3, HDFS, etc)
+
+### Why Spark is better than MapReduce?
+
+- MapReduce required files to be stored only in HDFS, Spark can use data stored at various source.
+- Spark can perform operations 100x faster than MapReduce.
+- MapReduce writes most data to disk (Hard Drive) after each map and reduce operation, Spark keeps most of the data in memory (RAM) after each transformation.
+- Spark can spill over to disk (Hard Drive) if the memory (RAM) is filled.
+- At the core of Spark is the idea of Resilient Distributed Dataset (RDD)
+
+### **Resilient Distributed Dataset (RDD)**
+- Distributed Collection of Data
+- Fault tolerant
+- Parallel operation - Partitioning
+- Ability to use many data sources
+- Master Node assign Tasks to the Worker Nodes
+- Worker Nodes returns results
+- RDDs are immutable 
 
 Here's a table summarizing the key differences:
 
