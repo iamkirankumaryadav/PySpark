@@ -31,3 +31,5 @@
 
 * Being open-source, Spark benefits from a large and active community of developers and users, contributing to its ongoing development and improvement.
 * Extensive documentation and resources are readily available, making it easier to learn and adopt Spark for your projects.
+
+Realistically Spark won't be running on a single machine, it will run on a cluster on a service like AWS
