@@ -33,3 +33,9 @@
 * Extensive documentation and resources are readily available, making it easier to learn and adopt Spark for your projects.
 
 Realistically Spark won't be running on a single machine, it will run on a cluster on a service like AWS
+
+### DataFrames
+
+- Spark DataFrames hold data in column and row format
+- Each column represents some feature or variable
+- Each row represents an individual data point
