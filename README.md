@@ -26,15 +26,17 @@ AppName   spark
 
 ### Read a dataset and create a dataframe
 ```python
+# Read the file: 
 df = spark.read.csv('Data.csv', header=True, inferSchema=True)
 ```
 
 ### Display the dataframe
 ```python
+# Show all the columns:
 df.show()
 ```
 ```output
-# Show all the columns
+# Output:
 +-----------+----+------------------------+
 |       Name| Age|             Designation|
 +-----------+----+------------------------+
@@ -46,6 +48,7 @@ df.show()
 
 ### Check the schema
 ```python
+# Show the schema details:
 df.printSchema()
 ```
 
@@ -60,6 +63,7 @@ root
 ### Data type of a variable
 
 ```python
+# Data type:
 type(df)
 ```
 
@@ -69,18 +73,18 @@ pyspark.sql.dataframe.DataFrame
 
 ### Get the column names
 ```python
+# List of all the column names:
 df.columns
 ```
 
 ### Select top 3 rows
 ```python
+# Show only top n rows:
 df.head(3)
-
 # In pyspark, the output will be a list not a dataframe.
 ```
 ```terminal
 # Output:
-
 [Row(Name='Kirankumar', Age=28, Role='Data Science Speicalist'),
  Row(Name='Paramveer', Age=29, Role='Data Analyst'),
  Row(Name='Gaurav', Age=29, Role='SDE')]
@@ -88,11 +92,13 @@ df.head(3)
 
 ### Show specific column
 ```python
+# Select a particular column:
 df.select('Name').show()
 ```
 
 ### Show multiple columns
 ```python
+# Pass list of columns to display multiple columns:
 df.select(['Name', 'Experience']).show()
 ```
 
@@ -118,9 +124,8 @@ Kirankumar Yadav|28|Data Science Specialist
 Suraj Sanka|28|DevOps Engineer
 Sumit Suman|27|Python Developer
 
-
 ```python
-# Create spark DataFrame from Pandas DataFrame
+# Create spark DataFrame from Pandas DataFrame:
 sdf = spark.createDataFrame(df)
 sdf.show()
 ```
@@ -147,3 +152,46 @@ Name|Age|Designation
 Kirankumar Yadav|28|Data Science Specialist
 Suraj Sanka|28|DevOps Engineer
 Sumit Suman|27|Python Developer
+
+### Description of Data Frame (Especially numerical features)
+
+```python
+# Statistical descriptions (count, mean, stddev, max, min):
+sdf.describe().show()
+```
+
+### Define the schema of a DataFrame
+
+```python
+from pyspark.sql.types import StructField, StringType, IntegerType, StructType
+
+# Define schema:
+data_schema = [StructField(name='age', dataType=IntegerType(), nullabel=True), StructField(name='name', dataType=StringType(), nullable=True)]
+new_schema = StructType(fields=data_schema)
+
+sdf = spark.read.json('People.json', schema=new_schema)
+sdf.printSchema()
+```
+
+### Create/Add a new column
+
+```python
+sdf.withColumn(colName='New Age', col=sdf['age']).show()
+sdf.withColumn(colName='New Age', col=sdf['age'] * 2).show()
+```
+
+
+### Rename the existing column
+
+```python
+sdf.withColumnRenamed(existing='sex', new='gender').show()
+```
+
+### Create a temporary view like SQL view
+
+```python
+sdf.createOrReplaceTempView('People')
+
+# We can write SQL queries to select the data:
+spark.sql('SELECT * FROM people WHERE age > 20').show()
+```
