@@ -129,3 +129,25 @@ df.show()
 # Print schema:
 df.printSchema()
 ```
+
+### Read csv file
+
+```python
+# Import Libraries:
+import os
+from pyspark.sql import SparkSession, DataFrame
+import sys
+
+# Set environment variables:
+os.environ['PYSPARK_PYTHON'] = sys.executable
+os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
+
+# Read csv file:
+df = spark.read.csv(path="./Data/Data.csv", inferSchema=True, header=True)
+
+# Show dataframe:
+df.show()
+
+# Print schema:
+df.printSchema()
+```
