@@ -86,3 +86,46 @@ df.show()
 # Print schema:
 df.printSchema()
 ```
+
+### Create dataframe using list of dictionaries
+
+```python
+# Import Libraries:
+import os
+from pyspark.sql import SparkSession, DataFrame
+from pyspark.sql.types import StructType, StructField, IntegerType, StringType
+import sys
+
+# Set environment variables:
+os.environ['PYSPARK_PYTHON'] = sys.executable
+os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
+
+# Create a spark session:
+spark = SparkSession.builder.appName(name="spark").getOrCreate()
+spark.conf.set(key="spark.sql.execution.arrow.enabled", value="true")
+
+# Create list of dictionaries:
+data = [
+    {"Name": "Kirankumar Yadav", "Age": 28, "Designation": "Data Science Specialist"},
+    {"Name": "Suraj Sanka", "Age": 28, "Designation": "DevOps Engineer"},
+    {"Name": "Sumit Suman", "Age": 26, "Designation": "Python Developer"},
+    {"Name": "Nilay Otswal", "Age": 26, "Designation": "QA Analyst"},
+    {"Name": "Karthik Vyas", "Age": 32, "Designation": "Business Consultant"}
+]
+
+# Create schema:
+schema = StructType([
+    StructField(name="Name", dataType=StringType(), nullable=True),
+    StructField(name="Age", dataType=IntegerType(), nullable=True),
+    StructField(name="Designation", dataType=StringType(), nullable=True)
+])
+
+# Create dataframe:
+df = spark.createDataFrame(data=data, schema=schema)
+
+# Show dataframe:
+df.show()
+
+# Print schema:
+df.printSchema()
+```
