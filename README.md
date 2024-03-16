@@ -3,10 +3,18 @@
 ### Import library
 ```python
 from pyspark.sql import SparkSession
+import pandas as pd
 ```
 
 ### Create a variable for starting a session
 ```python
+# Set environment variables:
+import os
+import sys
+
+os.environ['PYSPARK_PYTHON'] = sys.executable
+os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
+
 # PySpark applications start with initializing SparkSession:
 spark = SparkSession.builder.appName("spark").getOrCreate()
 spark.conf.set("spark.sql.execution.arrow.enabled", "true")
@@ -28,15 +36,15 @@ AppName   spark
 ```python
 # Read the file: 
 df = spark.read.csv('Data.csv', header=True, inferSchema=True)
-```
 
-### Display the dataframe
-```python
-# Show all the columns:
+# Show the dataframe:
 df.show()
+
+# Show the schema details:
+df.printSchema()
 ```
 ```output
-# Output:
+# df.show():
 +-----------+----+------------------------+
 |       Name| Age|             Designation|
 +-----------+----+------------------------+
@@ -44,16 +52,8 @@ df.show()
 |  Paramveer|  29|            Data Analyst|
 |     Gaurav|  29|                     SDE|
 +-----------+----+------------------------+
-```
 
-### Check the schema
-```python
-# Show the schema details:
-df.printSchema()
-```
-
-```terminal
-# Output:
+# df.printSchema():
 root
   | -- Name: string (nullable = true)
   | -- Age: integer (nullable = true)
