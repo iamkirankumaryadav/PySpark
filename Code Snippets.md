@@ -14,8 +14,8 @@ os.environ['PYSPARK_PYTHON'] = sys.executable
 os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
 
 # Create a spark session:
-spark = SparkSession.builder.appName("spark").getOrCreate()
-spark.conf.set("spark.sql.execution.arrow.enabled", "true")
+spark = SparkSession.builder.appName(name="spark").getOrCreate()
+spark.conf.set(key="spark.sql.execution.arrow.enabled", value="true")
 
 # Create data:
 data = {
@@ -58,8 +58,8 @@ os.environ['PYSPARK_PYTHON'] = sys.executable
 os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
 
 # Create a spark session:
-spark = SparkSession.builder.appName("spark").getOrCreate()
-spark.conf.set("spark.sql.execution.arrow.enabled", "true")
+spark = SparkSession.builder.appName(name="spark").getOrCreate()
+spark.conf.set(key="spark.sql.execution.arrow.enabled", value="true")
 
 # Create list of tuples:
 data = [
