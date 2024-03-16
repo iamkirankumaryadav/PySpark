@@ -71,7 +71,6 @@ data = [
 ]
 
 # Create schema:
-from pyspark.sql.types import StructType, StructField, IntegerType, StringType
 schema = StructType([
     StructField(name='Name', dataType=StringType(), nullable=True), 
     StructField(name='Age', dataType=IntegerType(), nullable=True),
